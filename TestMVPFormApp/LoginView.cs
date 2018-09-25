@@ -16,18 +16,26 @@ namespace TestMVPFormApp
         {
             InitializeComponent();
             buttonSearch.Click += (s, a) => OnSearchButtonPressed();
+            txtBoxSearchInput.Click += (s, a) => OnSearchInputClicked();
         }
 
         public event EventHandler SearchButtonPressed;
+        public event EventHandler SearchInputClicked;
 
         protected virtual void OnSearchButtonPressed()
         {
             SearchButtonPressed?.Invoke(this, EventArgs.Empty);
         }
 
-        public void ClearInputText()
+        protected virtual void OnSearchInputClicked()
         {
-            throw new NotImplementedException();
+            SearchInputClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void ClearSearchBoxText()
+        {
+            this.txtBoxSearchInput.Text = "";
+            this.txtBoxSearchInput.ForeColor = Color.Black;
         }
 
         public string GetInputText()
@@ -44,8 +52,9 @@ namespace TestMVPFormApp
     public interface ILoginView
     {
         event EventHandler SearchButtonPressed;
+        event EventHandler SearchInputClicked;
         string GetInputText();
         void SetInputText(string txt);
-        void ClearInputText();
+        void ClearSearchBoxText();
     }
 }

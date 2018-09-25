@@ -34,17 +34,19 @@
             // 
             // txtBoxSearchInput
             // 
+            this.txtBoxSearchInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtBoxSearchInput.Location = new System.Drawing.Point(23, 22);
             this.txtBoxSearchInput.Name = "txtBoxSearchInput";
             this.txtBoxSearchInput.Size = new System.Drawing.Size(403, 22);
-            this.txtBoxSearchInput.TabIndex = 0;
+            this.txtBoxSearchInput.TabIndex = 1;
+            this.txtBoxSearchInput.Text = "Enter Text Here";
             // 
             // buttonSearch
             // 
             this.buttonSearch.Location = new System.Drawing.Point(350, 72);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 1;
+            this.buttonSearch.TabIndex = 0;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
             // 

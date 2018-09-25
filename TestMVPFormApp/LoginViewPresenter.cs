@@ -17,11 +17,17 @@ namespace TestMVPFormApp
             this._loginView = mainForm.LoginView;
 
             _loginView.SearchButtonPressed += OnSearchButtonPressed;
+            _loginView.SearchInputClicked += OnSearchInputClicked;
         }
 
         private void OnSearchButtonPressed(object sender, EventArgs e)
         {
             _loginView.SetInputText("This might be working");
+        }
+
+        private void OnSearchInputClicked(object sender, EventArgs e)
+        {
+            _loginView.ClearSearchBoxText();
         }
     }
 }
