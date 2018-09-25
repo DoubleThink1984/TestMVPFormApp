@@ -16,7 +16,12 @@ namespace TestMVPFormApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var mainForm = new Form1();
+
+            var presenter = new LoginViewPresenter(mainForm);
+
+            Application.Run(mainForm);
         }
     }
 }
