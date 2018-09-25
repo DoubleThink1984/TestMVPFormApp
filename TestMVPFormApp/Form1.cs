@@ -12,14 +12,14 @@ namespace TestMVPFormApp
 {
     public partial class Form1 : Form, IMainForm
     {
-        public ILoginView _loginView;
+        //public ILoginView _loginView;
         public Form1()
         {
             InitializeComponent();
-            this._loginView = loginView1;
+            //this._loginView = loginView1;
         }
 
-        public ILoginView LoginView { get { return this._loginView;  } }
+        public ILoginView LoginView { get { return this.loginView1;  } }
     }
 
     public interface IMainForm
