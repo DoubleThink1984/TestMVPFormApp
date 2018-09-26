@@ -35,7 +35,11 @@ namespace TestMVPFormApp
         public void ClearSearchBoxText()
         {
             this.txtBoxSearchInput.Text = "";
-            this.txtBoxSearchInput.ForeColor = Color.Black;
+        }
+
+        public void SetSearchTextBoxForeColor(Color color)
+        {
+            this.txtBoxSearchInput.ForeColor = color;
         }
 
         public string GetInputText()
@@ -56,5 +60,6 @@ namespace TestMVPFormApp
         string GetInputText();
         void SetInputText(string txt);
         void ClearSearchBoxText();
+        void SetSearchTextBoxForeColor(Color color);
     }
 }

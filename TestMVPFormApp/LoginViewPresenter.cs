@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,7 @@ namespace TestMVPFormApp
         {
             await _loginService.WaitForService();
             _loginView.ClearSearchBoxText();
+            _loginView.SetSearchTextBoxForeColor(Color.Blue);
         }
     }
 
