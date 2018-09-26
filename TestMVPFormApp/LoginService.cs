@@ -16,7 +16,7 @@ namespace TestMVPFormApp
 
         public async Task WaitForService()
         {
-            await Task.Delay(10000);
+            await Task.Delay(2000);
         }
 
         //public async Task WaitForThis()

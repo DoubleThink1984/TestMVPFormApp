@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestMVPFormApp
 {
-    public class LoginViewPresenter
+    public class LoginViewPresenter : ILoginViewPresenter
     {
         private ILoginView _loginView;
         private ILoginService _loginService;
@@ -21,15 +21,21 @@ namespace TestMVPFormApp
             _loginView.SearchInputClicked += OnSearchInputClicked;
         }
 
-        private void OnSearchButtonPressed(object sender, EventArgs e)
+        public void OnSearchButtonPressed(object sender, EventArgs e)
         {
             _loginView.SetInputText("This might be working");
         }
 
-        private async void OnSearchInputClicked(object sender, EventArgs e)
+        public async void OnSearchInputClicked(object sender, EventArgs e)
         {
             await _loginService.WaitForService();
             _loginView.ClearSearchBoxText();
         }
+    }
+
+    public interface ILoginViewPresenter
+    {
+        void OnSearchInputClicked(object sender, EventArgs e);
+        void OnSearchButtonPressed(object sender, EventArgs e);
     }
 }
