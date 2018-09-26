@@ -18,8 +18,9 @@ namespace TestMVPFormApp
             Application.SetCompatibleTextRenderingDefault(false);
 
             var mainForm = new Form1();
+            var loginService = new LoginService();
 
-            var presenter = new LoginViewPresenter(mainForm);
+            var presenter = new LoginViewPresenter(mainForm, loginService);
 
             Application.Run(mainForm);
         }
