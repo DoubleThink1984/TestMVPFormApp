@@ -19,7 +19,7 @@ namespace TestMVPFormApp
             //this._loginView = loginView1;
         }
 
-        public ILoginView LoginView { get { return this.loginView1;  } }
+        public ILoginView LoginView { get { return this.loginView;  } }
     }
 
     public interface IMainForm

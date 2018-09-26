@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.loginView1 = new TestMVPFormApp.LoginView();
+            this.loginView = new TestMVPFormApp.LoginView();
             this.SuspendLayout();
             // 
-            // loginView1
+            // loginView
             // 
-            this.loginView1.Location = new System.Drawing.Point(172, 37);
-            this.loginView1.Name = "loginView1";
-            this.loginView1.Size = new System.Drawing.Size(452, 380);
-            this.loginView1.TabIndex = 0;
+            this.loginView.Location = new System.Drawing.Point(172, 37);
+            this.loginView.Name = "loginView";
+            this.loginView.Size = new System.Drawing.Size(452, 380);
+            this.loginView.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.loginView1);
+            this.Controls.Add(this.loginView);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -52,7 +52,7 @@
 
         #endregion
 
-        private LoginView loginView1;
+        private LoginView loginView;
     }
 }
 

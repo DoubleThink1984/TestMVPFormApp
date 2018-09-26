@@ -22,10 +22,9 @@ namespace TestMVPFormApp
 
             Bootstrap();
             
-            var loginService = new LoginService();
+            //var loginService = new LoginService();
 
             var mainForm = Container.Resolve<IMainForm>();
-
             var presenter = Container.Resolve<ILoginViewPresenter>();
 
             Application.Run((Form)mainForm);
@@ -36,7 +35,7 @@ namespace TestMVPFormApp
             var builder = new ContainerBuilder();
 
             //builder.RegisterType<Form1>().AsSelf().SingleInstance();
-            builder.RegisterType<Form1>().As<IMainForm>().SingleInstance();
+            builder.RegisterType<Form1>().As<IMainForm>().InstancePerLifetimeScope();
             builder.RegisterType<LoginService>().As<ILoginService>();
             builder.RegisterType<LoginView>().As<ILoginView>();
             builder.RegisterType<LoginViewPresenter>().As<ILoginViewPresenter>();
