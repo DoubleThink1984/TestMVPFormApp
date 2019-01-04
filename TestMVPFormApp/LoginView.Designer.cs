@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtBoxSearchInput = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.inputTextErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.inputTextErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBoxSearchInput
@@ -50,6 +53,10 @@
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
             // 
+            // inputTextErrorProvider
+            // 
+            this.inputTextErrorProvider.ContainerControl = this;
+            // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -58,6 +65,7 @@
             this.Controls.Add(this.txtBoxSearchInput);
             this.Name = "LoginView";
             this.Size = new System.Drawing.Size(452, 380);
+            ((System.ComponentModel.ISupportInitialize)(this.inputTextErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -67,5 +75,6 @@
 
         private System.Windows.Forms.TextBox txtBoxSearchInput;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.ErrorProvider inputTextErrorProvider;
     }
 }

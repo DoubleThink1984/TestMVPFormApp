@@ -17,10 +17,12 @@ namespace TestMVPFormApp
             InitializeComponent();
             buttonSearch.Click += (s, a) => OnSearchButtonPressed();
             txtBoxSearchInput.Click += (s, a) => OnSearchInputClicked();
+            txtBoxSearchInput.Validating += new System.ComponentModel.CancelEventHandler(this.OnSearchInputValidating);
         }
 
         public event EventHandler SearchButtonPressed;
         public event EventHandler SearchInputClicked;
+        public event CancelEventHandler SearchInputValidating;
 
         protected virtual void OnSearchButtonPressed()
         {
@@ -30,6 +32,12 @@ namespace TestMVPFormApp
         protected virtual void OnSearchInputClicked()
         {
             SearchInputClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        protected virtual void OnSearchInputValidating(object sender, CancelEventArgs e)
+        {
+            var asdf = e;
+            SearchInputValidating?.Invoke(sender, e);
         }
 
         public void ClearSearchBoxText()
@@ -50,16 +58,27 @@ namespace TestMVPFormApp
         public void SetInputText(string txt)
         {
             this.txtBoxSearchInput.Text = txt;
-        }                
+        }
+
+        public void ShowErrorproviderText(string errorMessage)
+        {
+            this.inputTextErrorProvider.SetError(this.txtBoxSearchInput, errorMessage);
+        }
+        protected override void OnValidated(EventArgs e)
+        {
+            base.OnValidated(e);    
+        }
     }
 
     public interface ILoginView
     {
         event EventHandler SearchButtonPressed;
         event EventHandler SearchInputClicked;
+        event CancelEventHandler SearchInputValidating;
         string GetInputText();
         void SetInputText(string txt);
         void ClearSearchBoxText();
+        void ShowErrorproviderText(string errorMessage);
         void SetSearchTextBoxForeColor(Color color);
     }
 }
